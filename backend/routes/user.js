@@ -15,7 +15,7 @@ router.post("/signup", (req, res, next) =>{
     user.save()
     .then(result => {
       res.status(201).json({
-        message: 'user created!',
+        message: 'user has been created!',
         result: result
       })
     })
@@ -32,7 +32,7 @@ router.post("/login", (req, res, next)=>{
   User.findOne({email:req.body.email}).then(user=> {
     if(!user){
       return res.status(401).json({
-        message: 'Auth Failed!'
+        message: 'Authuntication Failed!'
       })
     }
     fetchedUser = user;
@@ -41,17 +41,17 @@ router.post("/login", (req, res, next)=>{
   .then(result=>{
     if(!result){
       return res.status(401).json({
-        message: 'Auth Failed!'
+        message: 'Authuntication Failed!'
       })
     }
-    const token = jwt.sign({email: fetchedUser.email, userId: fetchedUser._id}, 'secret_this_should_be_longer', {expiresIn:'1hr'})
+    const token = jwt.sign({email: fetchedUser.email, userId: fetchedUser._id}, 'secret_this_should_be_longer', {expiresIn:'3hr'})
     res.status(200).json({
       token: token
     })
   })
   .catch(err=>{
     return res.status(401).json({
-      message: 'Auth Failed!'
+      message: 'Authuntication Failed!'
     })
   })
 })
