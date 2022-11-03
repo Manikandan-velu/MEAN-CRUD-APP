@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mean-crud-app",
+            "outputPath": "dist/mean-course",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mean-crud-app:build"
+            "browserTarget": "mean-course:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mean-crud-app:build:production"
+              "browserTarget": "mean-course:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mean-crud-app:build"
+            "browserTarget": "mean-course:build"
           }
         },
         "test": {
@@ -109,7 +109,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mean-crud-app:serve"
+            "devServerTarget": "mean-course:serve"
           }
         },
         "lint": {
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "mean-crud-app"
+  "defaultProject": "mean-course"
 }
