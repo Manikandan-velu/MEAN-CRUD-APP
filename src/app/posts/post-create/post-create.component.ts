@@ -12,10 +12,10 @@ import { mimeType } from "./mime-type.validator";
   styleUrls: ["./post-create.component.css"]
 })
 export class PostCreateComponent implements OnInit {
-  enteredTitle = "";
-  enteredContent = "";
+  enteredTitle:string = "";
+  enteredContent:string = "";
   post: Post;
-  isLoading = false;
+  isLoading:boolean = false;
   form: FormGroup;
   imagePreview: string;
   private mode = "create";
