@@ -1,6 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
+  //return to home url
   navigateTo() {
     return browser.get('/');
   }
